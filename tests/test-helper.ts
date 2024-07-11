@@ -1,4 +1,4 @@
-import Application from 'devcon-2024-ember-test/app';
+import Application from '@ember/application';
 import config from 'devcon-2024-ember-test/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
