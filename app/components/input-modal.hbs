@@ -1,16 +1,13 @@
-<!-- app/components/input-modal.hbs -->
+{{!-- app/components/input-modal.hbs --}}
 <div class="input-modal">
   <div class="modal-content">
-    <button {{on "click" this.closeModal}}>X</button>
-    <label>First Name</label>
-    <input type="text" value={{this.firstName}} {{on "input" this.updateFirstName}} />
+    <button type="button" {{on "click" this.closeModal}}>X</button>
+    <label>First Name<input type="text" value={{this.firstName}} {{on "input" this.updateFirstName}} /></label>
 
-    <label>Last Name</label>
-    <input type="text" value={{this.lastName}} {{on "input" this.updateLastName}} />
+    <label>Last Name<input type="text" value={{this.lastName}} {{on "input" this.updateLastName}} /></label>
 
-    <label>Email</label>
-    <input type="email" value={{this.email}} {{on "input" this.updateEmail}} />
+    <label>Email<input type="email" value={{this.email}} {{on "input" this.updateEmail}} /></label>
 
-    <button {{on "click" this.save}}>Save</button>
+    <button type="button" {{on "click" this.save}}>Save</button>
   </div>
 </div>
