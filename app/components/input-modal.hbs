@@ -2,12 +2,14 @@
 <div class="input-modal">
   <div class="modal-content">
     <button type="button" {{on "click" this.closeModal}}>X</button>
-    <label>First Name<input type="text" value={{this.firstName}} {{on "input" this.updateFirstName}} /></label>
+    <label for="first-name">First Name</label>
+    <input id="first-name" type="text" value={{this.firstName}} {{on "input" this.updateFirstName}} />
 
-    <label>Last Name<input type="text" value={{this.lastName}} {{on "input" this.updateLastName}} /></label>
+    <label for="last-name">Last Name</label>
+    <input id="last-name" type="text" value={{this.lastName}} {{on "input" this.updateLastName}} />
 
-    <label>Email<input type="email" value={{this.email}} {{on "input" this.updateEmail}} /></label>
-
+    <label for="email">Email</label>
+    <input id="email" type="email" value={{this.email}} {{on "input" this.updateEmail}} />
     <button type="button" {{on "click" this.save}}>Save</button>
   </div>
 </div>
