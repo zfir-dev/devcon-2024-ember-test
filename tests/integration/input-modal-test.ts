@@ -1,7 +1,7 @@
 // tests/integration/components/input-modal-test.ts
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { pauseTest, render } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | input-modal', function (hooks) {
@@ -12,7 +12,6 @@ module('Integration | Component | input-modal', function (hooks) {
     assert.dom('input[type="text"]:nth-of-type(1)').exists();
     assert.dom('input[type="text"]:nth-of-type(2)').exists();
     assert.dom('input[type="email"]').exists();
-    await pauseTest();
     assert.dom('button:nth-of-type(1)').hasText('X');
     assert.dom('button:nth-of-type(2)').hasText('Save');
   });
