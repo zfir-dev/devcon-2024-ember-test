@@ -20,6 +20,17 @@ module('Integration | Component | excalidraw', function (hooks) {
 
     const iframe = find('iframe') as HTMLIFrameElement;
 
+    await new Promise((resolve) => {
+      iframe.onload = resolve;
+    });
+
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow?.document;
+    const label = iframeDocument?.querySelector('label[title="Rectangle — R or 2"]');
+    
+    console.log('iframe', label, iframeDocument);
+    
+    await click(label as Element);
+
 
   });
 });
