@@ -1,7 +1,10 @@
 <div  class="user-info">
     {{#if this.errorMsg}}
         <h1>Error: {{this.errorMsg}}</h1>
-    {{else}}
+    {{/if}}
+    {{#if this.name}}
         <h1>Welcome {{this.name}}</h1>
     {{/if}}
+</div>
+<div class="date-container">
 </div>
