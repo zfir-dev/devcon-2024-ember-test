@@ -1,3 +1,7 @@
 <div  class="user-info">
-    <h1>Welcome {{this.name}}</h1>
+    {{#if this.errorMsg}}
+        <h1>Error: {{this.errorMsg}}</h1>
+    {{else}}
+        <h1>Welcome {{this.name}}</h1>
+    {{/if}}
 </div>
