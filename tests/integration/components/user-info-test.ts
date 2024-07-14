@@ -31,7 +31,7 @@ module('Integration | Component | user-info', function (hooks) {
   // test('it fails without waitUntil to show updated text', async function (assert) {
   //   await render(hbs`<UserInfo />`);
 
-  //   const div = document.querySelector('.user-info') as HTMLDivElement;
+  //   const div = find('.user-info') as HTMLDivElement;
   //   assert.true(div.textContent?.includes('Welcome John'));
   // });
 
