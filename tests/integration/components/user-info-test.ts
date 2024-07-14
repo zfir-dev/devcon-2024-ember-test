@@ -62,6 +62,6 @@ module('Integration | Component | user-info', function (hooks) {
     await waitFor('.date', { timeout: 3000 });
     const div = find('.date') as HTMLDivElement;
 
-    assert.true(div.textContent?.includes(new Date() as unknown as string));
+    assert.true(div.textContent?.includes(new Date().toLocaleDateString()));
   });
 });
