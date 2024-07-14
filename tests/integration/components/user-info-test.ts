@@ -6,16 +6,18 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | user-info', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it fails without await settled', async function (assert) {
-    await render(hbs`<UserInfo />`);
+  // Fails
+  // test('it fails without await settled to show user info', async function (assert) {
+  //   await render(hbs`<UserInfo />`);
 
-    window.parent.postMessage({ name: 'error-message', message: 'unknown user !' });
+  //   window.parent.postMessage({ name: 'error-message', message: 'unknown user !' });
 
-    const div = find('.user-info') as HTMLDivElement;
-    assert.deepEqual(div.textContent?.trim(), 'Error: unknown user !');
-  });
+  //   const div = find('.user-info') as HTMLDivElement;
+  //   assert.deepEqual(div.textContent?.trim(), 'Error: unknown user !');
+  // });
 
-  test('it passes with await settled', async function (assert) {
+  // Passes
+  test('it passes with await settled to show user info', async function (assert) {
     await render(hbs`<UserInfo />`);
 
     window.parent.postMessage({ name: 'error-message', message: 'unknown user !' });
@@ -25,7 +27,16 @@ module('Integration | Component | user-info', function (hooks) {
     assert.deepEqual(div.textContent?.trim(), 'Error: unknown user !');
   });
 
-  test('it shows Welcome John', async function (assert) {
+  // Fails
+  // test('it fails without waitUntil to show updated text', async function (assert) {
+  //   await render(hbs`<UserInfo />`);
+
+  //   const div = document.querySelector('.user-info') as HTMLDivElement;
+  //   assert.true(div.textContent?.includes('Welcome John'));
+  // });
+
+  // Passes
+  test('it passes with waitUntil to show updated text', async function (assert) {
     await render(hbs`<UserInfo />`);
 
     const found = await waitUntil(() => {
@@ -36,7 +47,16 @@ module('Integration | Component | user-info', function (hooks) {
     assert.strictEqual(found, true);
   });
 
-  test('it shows user time', async function (assert) {
+  // Fails
+  // test('it fails without waitFor to show date', async function (assert) {
+  //   await render(hbs`<UserInfo />`);
+
+  //   const div = find('.date') as HTMLDivElement;
+  //   assert.true(div.textContent?.includes(new Date() as unknown as string));
+  // });
+
+  // Passes
+  test('it passes with waitFor to show date', async function (assert) {
     await render(hbs`<UserInfo />`);
 
     await waitFor('.date', { timeout: 3000 });
