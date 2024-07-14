@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'devcon-2024-ember-test/tests/helpers';
-import { find, render, settled } from '@ember/test-helpers';
+import { setupRenderingTest } from 'ember-qunit';
+import { find, render, settled, waitFor, waitUntil } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | user-info', function (hooks) {
@@ -23,5 +23,25 @@ module('Integration | Component | user-info', function (hooks) {
 
     const div = find('.user-info') as HTMLDivElement;
     assert.deepEqual(div.textContent?.trim(), 'Error: unknown user !');
+  });
+
+  test('it shows Welcome John', async function (assert) {
+    await render(hbs`<UserInfo />`);
+
+    const found = await waitUntil(() => {
+      const div = find('.user-info') as HTMLDivElement;
+      return div?.textContent?.includes('Welcome John');
+    }, { timeout: 3000 });
+
+    assert.strictEqual(found, true);
+  });
+
+  test('it shows user time', async function (assert) {
+    await render(hbs`<UserInfo />`);
+
+    await waitFor('.date', { timeout: 3000 });
+    const div = find('.date') as HTMLDivElement;
+
+    assert.true(div.textContent?.includes(new Date() as unknown as string));
   });
 });
