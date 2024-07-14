@@ -13,16 +13,12 @@ export default class UserInfoComponent extends Component {
 
         window.addEventListener('message', (e) => {
             if (e.data.name === 'error-message') this.errorMsg = e.data.message;
-        })
+        });
         this.setName();
         this.setDate();
         // window.parent.postMessage({ name: 'error-message', message: 'unknown user !' });
        
     }
-
-    // setName(): void {
-    //     this.name = 'John';
-    // }
 
     async setName() {
         return new Promise((resolve) => {
