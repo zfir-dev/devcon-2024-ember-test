@@ -1,7 +1,7 @@
 {{!-- app/components/input-modal.hbs --}}
 <div class="input-modal">
-  <div class="modal-content">
-    <button type="button" {{on "click" this.closeModal}}>X</button>
+  <div data-test-modal="" class="modal-content">
+    <button data-test-close-btn="" type="button" {{on "click" this.closeModal}}>X</button>
     <label for="first-name">First Name</label>
     <input id="first-name" type="text" value={{this.firstName}} {{on "input" this.updateFirstName}} />
 
@@ -10,6 +10,6 @@
 
     <label for="email">Email</label>
     <input id="email" type="email" value={{this.email}} {{on "input" this.updateEmail}} />
-    <button type="button" {{on "click" this.save}}>Save</button>
+    <button data-test-save-btn="" type="button" {{on "click" this.save}}>Save</button>
   </div>
 </div>

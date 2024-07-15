@@ -31,7 +31,7 @@ export default class UserInfoComponent extends Component {
             setTimeout(() => { 
                 this.userDate = new Date();
                 const div = document.querySelector('.date-container') as HTMLDivElement;
-                div.innerHTML = `<h1 class="date">${this.userDate}</h1>`;
+                div.innerHTML = `<h1 data-test-date="" class="date">${this.userDate}</h1>`;
                 resolve(); 
             }, 2000);
         });
