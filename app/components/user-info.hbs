@@ -1,9 +1,9 @@
 <div  class="user-info">
     {{#if this.errorMsg}}
-        <h1>Error: {{this.errorMsg}}</h1>
+        <h1 data-test-error="">Error: {{this.errorMsg}}</h1>
     {{/if}}
     {{#if this.name}}
-        <h1>Welcome {{this.name}}</h1>
+        <h1 data-test-user-name="">Welcome {{this.name}}</h1>
     {{/if}}
 </div>
 <div class="date-container">

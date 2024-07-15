@@ -1,5 +1,5 @@
 {{!-- app/components/open-modal-button.hbs --}}
-<button type="button" {{on "click" this.openModal}}>Open Modal</button>
+<button data-test-modal-btn="" type="button" {{on "click" this.openModal}}>Open Modal</button>
 {{#if this.isModalOpen}}
   <InputModal @closeModal={{this.closeModal}} />
 {{/if}}
