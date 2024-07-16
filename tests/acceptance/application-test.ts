@@ -13,6 +13,7 @@ module('Acceptance | application | app', function (hooks) {
     assert.deepEqual(h2.textContent, 'Welcome to DevCon 2024 Ember.js Test Demo');
 
     assert.dom('[data-test-modal-btn]').exists(); // assert open modal button exists
+    // await this.pauseTest();
 
     const hasUserName = await waitUntil(() => {
         const div = find('.user-info') as HTMLDivElement;
@@ -25,11 +26,13 @@ module('Acceptance | application | app', function (hooks) {
     assert.dom('[data-test-date]').containsText(new Date() as unknown as string); // assert date exists
 
     await click('[data-test-modal-btn]');
+    // await this.pauseTest();
     assert.dom('[data-test-modal]').exists(); // assert modal opens
     assert.dom('[data-test-close-btn]').exists(); // assert close button exists
     assert.dom('[data-test-save-btn]').exists(); // assert save button exists
 
     await click('[data-test-close-btn]');
+    // await this.pauseTest();
     assert.dom('[data-test-modal]').doesNotExist(); // assert modal is closed
   });
 });
