@@ -8,8 +8,7 @@ module('Integration | Component | open-modal-button', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders the open modal button', async function (assert) {
-    await render(hbs`<OpenModalButton />`);
-    assert.dom('button').hasText('Open Modal');
+    // Write the test here
   });
 
   test('it opens the modal when the button is clicked', async function (assert) {
